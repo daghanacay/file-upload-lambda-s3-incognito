@@ -1,4 +1,6 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {environment} from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +19,8 @@ export class AppComponent {
   fileDataUri = '';
   errorMsg = '';
 
+  constructor(private http: HttpClient) {}
+
   previewFile() {
     const file = this.fileInput.nativeElement.files[0];
     if (file && this.validateFile(file)) {
@@ -34,11 +38,22 @@ export class AppComponent {
   uploadFile(event: Event) {
     event.preventDefault();
 
-    // get only the base64 file
+    // get only the base64 file and post it
     if (this.fileDataUri.length > 0) {
       const base64File = this.fileDataUri.split(',')[1];
-      // TODO: send to server
-      console.log(base64File);
+      const data = {'image': base64File};
+      this.http.post(`${environment.apiUrl}/file`, data)
+        .subscribe(
+          res => {
+            // handle success
+            // reset file input
+            this.fileInput.nativeElement.value = '';
+            this.fileDataUri = '';
+          },
+          err => {
+            this.errorMsg = 'Could not upload image.';
+          }
+        );
     }
 
   }
