@@ -316,7 +316,7 @@ export class AppComponent {
 }
 ```
 
-# steps for getting to third step
+# Steps to getting to 3rd step
 
 1- update the Environment file
 
@@ -404,3 +404,7 @@ export class AppComponent {
 
 }
 ```
+
+# Steps to getting to 3rd step
+
+This aprt is covered in the instructions.docx
