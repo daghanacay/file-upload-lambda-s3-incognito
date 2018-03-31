@@ -38,7 +38,7 @@ for debugging on VS follow the instructions here https://github.com/Microsoft/vs
 
 1- update the app/app.component.html
 
-`
+```
 <h1>Angular File Input</h1>
 <!-- IMG preview -->
 <img [src]="fileDataUri">
@@ -57,7 +57,7 @@ for debugging on VS follow the instructions here https://github.com/Microsoft/vs
     [disabled]="fileDataUri.length === 0"
   >Upload</button>
 </form>
-`
+```
 
 2- update the app/app.component.html
 
