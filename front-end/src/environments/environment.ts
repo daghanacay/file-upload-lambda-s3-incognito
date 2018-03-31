@@ -6,5 +6,5 @@
 export const environment = {
   production: false,
   apiUrl: 'https://aob8p3u5nf.execute-api.ap-southeast-2.amazonaws.com/develop', // i.e.'https://beepboop.execute-api.us-west-2.amazonaws.com/Prod'
-  apiKey: 'PrgEv5W5Nz6YALWrXZD145gsOkji1Dw560AVoMDI'
+  apiKey: 'yourAPIKey', // P_Added_rgEv5W5Nz6YALWrXZD145gsOkji1Dw560AVoMDI fro my api key
 };
