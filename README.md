@@ -15,8 +15,8 @@ OS: linux x64
 
 ## References
 
-https://aws.amazon.com/blogs/compute/secure-api-access-with-amazon-cognito-federated-identities-amazon-cognito-user-pools-and-amazon-api-gateway/
-https://github.com/aws-samples/aws-cognito-apigw-angular-auth
+- https://aws.amazon.com/blogs/compute/secure-api-access-with-amazon-cognito-federated-identities-amazon-cognito-user-pools-and-amazon-api-gateway/
+- https://github.com/aws-samples/aws-cognito-apigw-angular-auth
 
 ## Angular App Setup
 We are going to use the angular cli to generate a new angular project. 
