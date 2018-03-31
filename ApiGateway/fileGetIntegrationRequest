@@ -1,0 +1,6 @@
+#set($inputRoot = $input.path('$'))
+{
+  "operation": "list",
+  "userId":"$context.authorizer.claims['cognito:username']",
+  "stage" : "$context.stage"
+}
