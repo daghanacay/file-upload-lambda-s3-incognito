@@ -38,6 +38,7 @@ for debugging on VS follow the instructions here https://github.com/Microsoft/vs
 
 1- update the app/app.component.html
 
+```
 <h1>Angular File Input</h1>
 <!-- IMG preview -->
 <img [src]="fileDataUri">
@@ -56,9 +57,11 @@ for debugging on VS follow the instructions here https://github.com/Microsoft/vs
     [disabled]="fileDataUri.length === 0"
   >Upload</button>
 </form>
+```
 
 2- update the app/app.component.html
 
+```
 import {Component, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
@@ -109,14 +112,19 @@ export class AppComponent {
   }
 
 }
+```
 
 # steps for getting to next step
 Create a folder to store lambda functions
+
+```
 $ mkdir lambda
 $ cd lambda
+```
 
 1- Create a javascript file "s3-file-load-lambda" and update the file content as follows
 
+```
 const AWS = require('aws-sdk');
 const fileType = require('file-type');
 
@@ -179,9 +187,11 @@ exports.handler = (event, context, callback) => {
     }
 
 };
+```
 
 2- Create package.json file and update as following
 
+```
 {
   "name": "lambda-s3-upload",
   "version": "0.0.0",
@@ -191,16 +201,20 @@ exports.handler = (event, context, callback) => {
     "file-type": "7.6.x"
   }
 }
+```
 
 3- go to lambda folder and run the npm and download the dependecies
 
+```
 $ cd lambda
 $ npm install
+```
 
 4- Zip the contents of the lambda folder (node_modules folder and s3-file-load-lambda.js file) and follow the instructions at "instructions.docx"
 
 5- Update the src/app/app.module.ts and import the HttpClientModule
 
+```
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -222,17 +236,20 @@ import { HttpClientModule } from '@angular/common/http';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
+```
 
 6- open up src/environments/environment.ts and add the key apiUrl with the value of your API URL.
 
+```
 export const environment = {
   production: false,
   apiUrl: 'your api url' // i.e.'https://beepboop.execute-api.us-west-2.amazonaws.com/Prod'
 };
+```
 
 7- Finally, open up the app.component.ts file and add the http post functionality.
 
+```
 import {Component, ElementRef, ViewChild} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../environments/environment';
@@ -298,4 +315,4 @@ export class AppComponent {
   }
 
 }
-
+```
