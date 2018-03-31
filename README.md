@@ -405,6 +405,6 @@ export class AppComponent {
 }
 ```
 
-# Steps to getting to 3rd step
+# Steps to getting to 4th step
 
-This aprt is covered in the instructions.docx
+This part is covered in the instructions.docx
